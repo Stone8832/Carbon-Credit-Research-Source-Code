@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 file_path = r"C:\Users\willr\Downloads\Cleaned_Klima_DAO_Transactions_Data.csv"
 data = pd.read_csv(file_path)
 
-# Ensure 'Token Amount' is numeric for analysis
+# Ensure 'Token Amount' is numeric
 data['Token Amount'] = pd.to_numeric(data['Token Amount'], errors='coerce')
 data = data[data['Token Amount'] > 0]  # Keep only positive values
 
