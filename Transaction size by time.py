@@ -24,7 +24,7 @@ def categorize_transaction(amount):
 # Apply the categorization
 data['Size Category'] = data['Token Amount'].apply(categorize_transaction)
 
-# Exclude the last week if incomplete
+# Exclude the last week
 last_full_week = data['Date'].dt.to_period('W').max() - 1
 data = data[data['Date'].dt.to_period('W') <= last_full_week]
 
